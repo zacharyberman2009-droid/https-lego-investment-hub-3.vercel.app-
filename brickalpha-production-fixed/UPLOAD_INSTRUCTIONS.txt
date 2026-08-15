@@ -1,0 +1,21 @@
+BRICKALPHA FIXED UPLOAD — IMPORTANT
+
+1. Unzip brickalpha-production-fixed.zip.
+2. Open your GitHub repository.
+3. Open the existing folder: lego-investment-hub-v2
+4. Replace the contents of that folder with ALL files/folders from this ZIP:
+   app
+   components
+   lib
+   package.json
+   tsconfig.json
+   next-env.d.ts
+   README.md
+   .env.example (optional)
+5. DO NOT create another nested folder inside lego-investment-hub-v2.
+6. Keep Vercel Root Directory set to: lego-investment-hub-v2
+7. Vercel Framework Preset: Next.js.
+8. Let Vercel redeploy from the GitHub commit.
+
+NO API KEYS ARE REQUIRED for the public research workflow.
+Optional API keys are documented in README.md.
