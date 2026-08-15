@@ -1,0 +1,36 @@
+export type Condition = "New/Sealed" | "Used Complete" | "Used Incomplete";
+export type InventoryStatus = "For Sale" | "Hold" | "Personal" | "Consignment";
+export type PriceSnapshot = { date:string; market:number };
+export type MarketKind = "sold" | "estimate" | "listing" | "retail" | "manual";
+export type MarketSource = {
+  source:string;
+  label:string;
+  value:number;
+  kind:MarketKind;
+  detail?:string;
+  url?:string;
+  fetchedAt?:string;
+};
+export type LegoItem = {
+  id:string;
+  setNumber:string;
+  name:string;
+  theme:string;
+  year?:number;
+  condition:Condition;
+  quantity:number;
+  cost:number;
+  market:number;
+  storePrice:number;
+  status:InventoryStatus;
+  location?:string;
+  imageUrl?:string;
+  notes?:string;
+  lastUpdated?:string;
+  marketSources?:MarketSource[];
+  refreshRequested?:boolean;
+  refreshRequestedAt?:string;
+  history:PriceSnapshot[];
+};
+export type WatchItem = {id:string;setNumber:string;name:string;targetBuyPrice:number;currentMarket:number;notes?:string};
+export type ResearchLink = {source:string;label:string;url:string;purpose:string;tier:"primary"|"secondary"|"retail"};

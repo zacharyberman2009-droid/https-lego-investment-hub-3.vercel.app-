@@ -1,0 +1,13 @@
+BRICKALPHA SUPABASE FINAL — DEPLOYMENT
+
+1. Supabase dashboard → Authentication → Providers → enable Anonymous Sign-Ins.
+2. Upload the entire folder named brickalpha-supabase-final to the ROOT of your GitHub repository.
+3. Vercel → lego-investment-hub-3 → Settings → Build and Deployment.
+4. Set Root Directory exactly to: brickalpha-supabase-final
+5. Save.
+6. Deploy/redeploy without build cache.
+7. Open Inventory once. If your old browser inventory exists and Supabase is empty, BrickAlpha imports it automatically and keeps the browser copy as backup.
+8. Click “Queue all price refreshes” OR just reload Inventory (sets older than 24h are queued automatically).
+9. In ChatGPT say: “Refresh my BrickAlpha prices.”
+
+ChatGPT can then read the Supabase queue, research current public LEGO pricing, and update the database.
