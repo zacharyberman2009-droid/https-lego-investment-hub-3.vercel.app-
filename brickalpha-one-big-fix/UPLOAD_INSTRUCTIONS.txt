@@ -1,0 +1,30 @@
+BRICKALPHA — ONE BIG FIX
+========================
+
+This is a COMPLETE replacement project. It removes the broken BrickLink API-key-only
+market route and replaces it with a public-market research workflow that never returns
+503 just because seller/API credentials are missing.
+
+BEST / CLEANEST INSTALL:
+1. In GitHub, create a NEW top-level folder named: brickalpha-one-big-fix
+2. Upload the CONTENTS of this unzipped folder into that GitHub folder.
+3. In Vercel -> Project -> Settings -> Build & Deployment -> Root Directory,
+   set Root Directory to exactly: brickalpha-one-big-fix
+4. Save.
+5. Deploy/redeploy WITHOUT using the old build cache if Vercel offers that choice.
+
+VERIFY AFTER DEPLOY:
+Open:
+/api/market-value?setNumber=75313&condition=N
+
+GOOD response includes:
+  "mode":"public-research"
+  "researchLinks":[...]
+
+It must NOT say:
+  "No live market sources are configured"
+It must NOT return HTTP 503.
+
+IMPORTANT:
+Do not upload this ZIP itself as the app. Unzip it first and upload its contents.
+Do not put this folder inside lego-investment-hub-v2 unless you also change Vercel's Root Directory.
