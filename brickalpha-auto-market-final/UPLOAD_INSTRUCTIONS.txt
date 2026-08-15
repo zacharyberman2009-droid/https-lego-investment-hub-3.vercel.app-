@@ -1,0 +1,31 @@
+BRICKALPHA AUTOMATIC MARKET RESEARCH — FINAL INSTALL
+
+This build replaces the manual-only market workflow with OpenAI server-side web research.
+
+1. In Vercel > lego-investment-hub-3 > Settings > Environment Variables, make sure this exists for Production:
+   OPENAI_API_KEY = your NEW OpenAI API secret key
+   (Do not use or restore any key you previously exposed.)
+
+2. In GitHub, upload this entire folder at the repository root as:
+   brickalpha-auto-market-final/
+
+3. In Vercel > Settings > Build and Deployment, set Root Directory EXACTLY to:
+   brickalpha-auto-market-final
+
+4. Save the root setting.
+
+5. Go to Deployments and redeploy the newest commit WITHOUT build cache.
+
+6. Test this exact URL after deployment:
+   https://lego-investment-hub-3.vercel.app/api/market-value?setNumber=75313&condition=N
+
+Expected success:
+   - HTTP 200
+   - mode = openai-web-search
+   - sources is an array of public web price evidence
+   - market is a number when enough reliable prices are found
+
+If the key is missing, the endpoint returns OPENAI_KEY_MISSING.
+If OpenAI billing/quota is not active, the endpoint returns OPENAI_MARKET_LOOKUP_FAILED with the API error message.
+
+The Inventory and Price Research pages now call this endpoint automatically.
